@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container .btns{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container .btns span{
+    padding: 4px 9px;
+    background-color: #fefefe;
+    outline: 1px solid black;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    user-select: none;
+}
+.inner_container,.second_page,.third_page{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.inner_container label,.second_page label,.third_page label{
+    display: block;
+    padding: 10px 0;
+}
+
+.inner_container select,input[type="number"],.second_page select,.third_page select,.last_page{
+    padding: 4px 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.inner_container input[type="button"],.second_page .second_page_btns,.last_page .last_page_btns button{
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+.second_page .second_page_btns,.third_page_btns,.last_page .last_page_btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.addMore{
+    position: relative;
+}
+
+.addMore input{
+    padding: 11px 18px;
+    background: transparent;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 50%;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.addMore i{
+    position: absolute;
+    left: 12.5px;
+    top: 21px;
+    z-index: -1;
+}
+
+.sameSelect{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.third_page_btns{
+    padding-top: 20px;
+}
+
+.third_page .addMore button{
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.last_page{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+}
+
+.hide{
+    display: none;
+}
+
+.color_class{
+    background-color: rgb(253, 112, 30) !important;
+    color: #fff;
+}
+
+.review_page .reviewContent{
+    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+table{
+    padding: 30px 0 0 0;
+    font-size: 17px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.specials_border,.same_data{
+    display: flex;
+    gap: 3rem;
+}
+.second_col{
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+.same_data{
+    gap: 1rem;
+}
+
+.last_page_btns{
+    padding-top: 20px;
+}

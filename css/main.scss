@@ -1,0 +1,21 @@
+body {
+    background-color: #fff;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.714;
+    overflow-x: hidden; 
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1; 
+}
+
+@import './color';
+@import './header_branding';
+@import './story';
+@import './chefChoice';
+@import './ourMenu';
+@import './reviews';
+@import './media';
+@import './formSection';
+@import './getAllDishs';
+@import './footer';

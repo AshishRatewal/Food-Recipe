@@ -1,0 +1,19 @@
+.footer{
+    background: url(../images/footer-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2rem 0;
+    img{
+        height: 120px;
+        padding: 0.5rem;
+        border-radius: 20px;
+    }
+}
+.copyright{
+    background: rgb(27, 25, 25);
+    p{
+        font-weight: normal !important;
+        font-size: 14px;
+    }
+}

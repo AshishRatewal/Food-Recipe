@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOOD RECIPE | ADD DISH</title>
+    <!-- fav icon -->
+    <link rel="shortcut icon" type="image/svg" href="./images/favicon.svg"/>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;700;800&family=Rancho&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- slider css -->
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/slick-theme.css">
+    <!-- custom css file -->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <!-- form -->
+    <div class="firstForm">
+      <div class="formSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>add dishes</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="formClass" action="" >
+                      <!-- enter ingredients *****************************************-->
+                      <div class="form-group">
+                        <label for="ingredients">Enter Ingredients</label>
+                        <input type="text" class="form-control" aria-describedby="ingrerr" id="ingredients" placeholder="Enter Ingredients">
+                        <small id="ingrerr" class="form-text text-light ingreErr"></small>
+                      </div>
+                      <!-- enter quantity -->
+                      <div class="form-group">
+                        <label class="sr-only" for="ingredients">Enter Quantity</label>
+                        <input type="number" class="form-control" aria-describedby="quantityerr" id="quantity" placeholder="Enter Quantity" min="1" max="10">
+                        <small id="quantityerr" class="form-text text-light ingreErr"></small>
+                      </div>
+                      <!-- enter units -->
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="units">Enter Units</label>
+                        </div>
+                        <select class="custom-select" id="units" aria-describedby="uniterr">
+                          <option selected disabled value="">Units</option>
+                          <option value="kilogram">kilgram</option>
+                          <option value="Peice">Peice</option>
+                          <option value="gram">gram</option>
+                          <option value="liter">liter</option>
+                          <option value="cup">Cup</option>
+                          <option value="glass">Glass</option>
+                          <option value="Spoon">Spoon</option>
+                        </select>
+                      </div>
+                      <small id="uniterr" class="form-text text-light ingreErr"></small>
+                      <button type="submit" id="addIngredientsData" onclick="getIngre()" class="btn submitBtn mt-3 btn-block">Add Ingredients</button>
+                      <button type="submit" style="display: none;" id="addmoreIngre" class="btn submitBtn mt-3 btn-block">Add More</button>
+                      <button type="submit" style="display: none;" id="updateIngre" class="btn submitBtn mt-3 btn-block">Update</button>
+                      <button type="submit" style="display: none;" id="finalUpdateIngre" class="btn submitBtn mt-3 btn-block">Update</button>
+                    </form>
+                    <form class="mt-3 formClass">
+                      <!-- enter dish -->
+                        <div class="form-group">
+                          <label for="enterDish">Enter Dish</label>
+                          <input type="text" class="form-control" id="enterDish" aria-describedby="addDisherr" placeholder="Enter Dishes">
+                          <small id="addDisherr" class="form-text text-light err"></small>
+                        </div>
+                        <!-- image link -->
+                        <div class="form-group">
+                          <label for="imgLink">Image Link</label>
+                          <input type="text" class="form-control" aria-describedby="imgerr" id="imgLink" placeholder="Image Link">
+                          <small id="imgerr" class="form-text text-light err"></small>
+                        </div>
+                        <div class="form-group">
+                          <label for="foodRecipe">Food Recipe</label>
+                          <textarea class="form-control" id="foodRecipe" rows="3"></textarea>
+                          <small id="imgerr" class="form-text text-light err"></small>
+                        </div>
+                        <button type="submit" id="addDishData" onclick="finalSubmit()" class="btn submitBtn btn-block">Finall Submit</button>
+                        <button type="submit" style="display: none;" id="updateDishData" class="btn submitBtn btn-block">Update</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <form class="formClass">
+                        <div class="form-group">
+                          <label for="selectedItem">Your Dish</label>
+                          <input type="text" class="form-control" id="selectedItem" placeholder="Your Dish" disabled>
+                        </div>
+                        <label for="showIngredients">Show Ingredients</label>
+                        <div class="divArea" id="showIngredients">
+                          <!-- tabele -->
+                        <div class="ingreTable">
+                          <table class="table text-dark table-hover text-center">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                              </tr>
+                            </thead> <!--<th scope="row">1</th>-->
+                            <tbody id="showDataIngredients">  
+                            </tbody>
+                          </table>
+                      </div>
+                        </div>
+                      </form>
+                      <button style="display:none;" id="redirectBtn" class="btn btn-block submitBtn">Cancel</button>
+                </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-12">
+                <button class="btn btn-block submitBtn" id="getAllDishes">Get All Dishes</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- second page all dishes show -->
+    <div class="secondForm" style="display: none;">
+      <div class="showtimedata">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2">
+                    <button class="btn submitBtn goBack mt-4">Go back</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>all dishes</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form>
+                        <div class="form-group">
+                            <input type="search" class="form-control" id="searchItemsHere" placeholder="Search..">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 overFlow">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Dish Name</th>
+                            <th scope="col">Image Link</th>
+                            <th scope="col">Food Recipe</th>
+                            <th scope="col">Ingredients</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody id="showAllData"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-block" onclick="clearAllData()">Clear All Data</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+@media only screen and (max-width: 1200px) {
+    .header_branding .home_banner div h2::before,.header_branding .home_banner div h2::after{
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .header_branding .home_banner div h2::before,.header_branding .home_banner div h2::after{
+        width: 10%;
+    }
+    .story .col-md-6:last-child p:first-child::before,.story .col-md-6:last-child p:first-child::after{
+        width: 10%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .header_branding .home_banner div h1, .header_branding .home_banner div h2{
+        font-size: 5rem;
+    }
+    .header_branding .home_banner div h2::before{
+        left: -30px;
+    }
+    .header_branding .home_banner div h2::after{
+        right: -55px;
+    }
+    .chefChoice .col-md-6:first-child img{
+        width: 100%;
+        max-width: 100%;
+    }
+    .section3product{
+        padding: 0;
+    }
+    .chefChoice_heading{
+        padding: 2rem 0;
+        padding-bottom: 0;
+        p{
+            text-align: center;
+            &::after{
+                top: 13px;
+                left: 58%;
+            }
+        }
+        h1{
+            text-align: center;
+        }
+    }
+}
+@media only screen and (max-width: 662px) {
+    .header_branding .home_banner div h2 span{
+        padding: 0 10px;
+    }
+    .header_branding .home_banner div h2::before{
+        left: 0;
+    }
+    .header_branding .home_banner div h2::after{
+        right: 0;
+    }
+    .header_branding .home_banner{
+        padding-bottom: 5rem;
+    }
+}
+@media only screen and (max-width: 536px) {
+    .header_branding .home_banner div h1, .header_branding .home_banner div h2{
+        font-size: 60px;
+    }
+    .header_branding .home_banner div h2::after,.header_branding .home_banner div h2::before{
+        display: none;
+    }
+    .header_branding .home_banner{
+        padding-bottom: 1rem;
+    }
+    .social_header{
+        text-align: center;
+    }
+    .social_header_icons{
+        margin: 0 auto;
+    }
+    .myAccunt{
+        display: block;
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 443px){
+    .header_branding .home_banner div h1{
+        font-size: 40px;
+    }
+    .header_branding .home_banner div h2 span{
+        font-size: 20px;
+    }
+}
